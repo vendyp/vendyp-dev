@@ -1,0 +1,38 @@
+---
+const { title = "vendyp.dev" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header class="border-b">
+            <nav
+                class="max-w-3xl mx-auto flex justify-center gap-8 py-6 text-sm font-medium"
+            >
+                <a href="/posts" class="hover:underline">Posts</a>
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/projects" class="hover:underline">Projects</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 max-w-3xl mx-auto w-full px-4 py-12">
+            <slot />
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t text-sm text-gray-500">
+            <div class="max-w-3xl mx-auto px-4 py-6 text-center">
+                © {new Date().getFullYear()} Dwi Vendy Pratama
+            </div>
+        </footer>
+    </body>
+</html>
