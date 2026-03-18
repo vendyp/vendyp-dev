@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  date: string;
+  excerpt: string;
+  href?: string;
+}
+
+const { title, category, date, excerpt, href = "#" } = Astro.props;
+---
+
+<article class="group flex flex-col justify-between rounded-2xl border border-gray-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(47,128,237,0.10)] sm:flex-row sm:items-center md:p-8">
+  <div class="flex-1 md:pr-6">
+    <div class="mb-1 flex items-center gap-2">
+      <h3 class="text-xl font-bold text-navy">{title}</h3>
+    </div>
+    <div class="mb-2 flex items-center gap-2 text-sm text-gray-500">
+      {category}
+      <span class="mx-1">•</span>
+      {date}
+    </div>
+    <p class="text-sm leading-relaxed text-gray-600">{excerpt}</p>
+  </div>
+  <div class="mt-4 sm:mt-0">
+    <a href={href} class="group/link relative flex w-full items-center justify-between text-sm font-medium text-coral transition-all duration-200">
+      Read More
+      <span class="ml-1 inline-block transition-transform duration-200 group-hover/link:translate-x-1">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 18h12" stroke="#2F80ED" stroke-width="3" stroke-linecap="round"></path>
+          <path d="M24 18l-4.5-4.5" stroke="#2F80ED" stroke-width="3" stroke-linecap="round"></path>
+          <path d="M24 18l-4.5 4.5" stroke="#2F80ED" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+      </span>
+    </a>
+  </div>
+</article>

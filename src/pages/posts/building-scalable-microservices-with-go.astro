@@ -1,0 +1,37 @@
+---
+import { featuredPost } from "../../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title={`Dwi Vendy - ${featuredPost.title}`} activeNav="post">
+  <main style="min-height: 750px;">
+    <section class="fade-in px-4 pt-32 pb-8 sm:px-6">
+      <div class="mx-auto max-w-5xl">
+        <h1 class="text-3xl font-extrabold tracking-tight text-navy md:text-4xl">{featuredPost.title}</h1>
+        <p class="mt-2 text-lg text-gray-500">{featuredPost.description}</p>
+      </div>
+    </section>
+    <section class="fade-in px-4 pb-20 sm:px-6">
+      <article class="mx-auto max-w-3xl rounded-[32px] border border-white/60 bg-white/70 p-8 shadow-[0_20px_60px_-20px_rgba(27,27,78,0.15)] backdrop-blur-sm md:p-12">
+        <div class="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-500">
+          <span class="rounded-full bg-blue-light px-3 py-1 font-medium text-coral">{featuredPost.category}</span>
+          <span>•</span>
+          <span>{featuredPost.date}</span>
+        </div>
+        <p class="mb-8 text-lg leading-relaxed text-body">{featuredPost.excerpt}</p>
+        <div class="space-y-10">
+          {
+            featuredPost.sections.map((section) => (
+              <section>
+                <h2 class="mb-4 text-2xl font-bold text-navy">{section.title}</h2>
+                <div class="space-y-4 text-base leading-8 text-gray-700">
+                  {section.body.map((paragraph) => <p>{paragraph}</p>)}
+                </div>
+              </section>
+            ))
+          }
+        </div>
+      </article>
+    </section>
+  </main>
+</BaseLayout>

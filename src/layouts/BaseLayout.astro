@@ -1,0 +1,43 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { siteMeta } from "../data/site";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: "about" | "post" | "project";
+  showCircleTop?: boolean;
+}
+
+const {
+  title,
+  description = siteMeta.description,
+  activeNav,
+  showCircleTop = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    {showCircleTop && <div class="bg-circle-top pointer-events-none opacity-50 shadow-[0_20px_50px_-12px_rgba(47,128,237,0.15)]"></div>}
+    <div class="blob-background"></div>
+    <div class="content-layer">
+      <SiteHeader active={activeNav} />
+      <slot />
+      <SiteFooter />
+    </div>
+    <script is:inline src="/scripts/site.js"></script>
+  </body>
+</html>

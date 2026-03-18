@@ -1,0 +1,43 @@
+---
+import { siteMeta, socialLinks } from "../data/site";
+---
+
+<footer class="border-t border-white/10 bg-navy pt-20 pb-10 text-white">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mb-12 flex flex-col items-center justify-between gap-8 md:flex-row">
+      <div class="text-center md:text-left">
+        <a href="/" class="mb-4 block text-3xl font-extrabold tracking-tight text-white transition-colors hover:text-coral">
+          Vendy<span class="text-coral">.</span>
+        </a>
+        <p class="mx-auto max-w-xs text-gray-400 md:mx-0">
+          Building digital products, brands, and experiences with passion and precision.
+        </p>
+      </div>
+
+      <div class="flex items-center space-x-6">
+        {
+          socialLinks.map((link) => (
+            <a
+              href={link.href}
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:scale-110 hover:bg-coral"
+              aria-label={link.label}
+            >
+              <span class="text-sm font-semibold">{link.label.slice(0, 2)}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row">
+      <p id="year-text">© 2026 Dwi Vendy. All rights reserved.</p>
+      <p class="flex items-center gap-1">
+        Made with
+        <svg class="h-4 w-4 fill-coral text-coral" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        {siteMeta.location}
+      </p>
+    </div>
+  </div>
+</footer>

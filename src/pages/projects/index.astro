@@ -1,0 +1,46 @@
+---
+import ProjectCard from "../../components/ProjectCard.astro";
+import { projects } from "../../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Dwi Vendy - Project List" activeNav="project">
+  <main>
+    <section id="experience" class="fade-in px-4 py-20 sm:px-6 md:py-28">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-12 text-center">
+          <span class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral">Project List</span>
+          <h3 class="text-3xl font-extrabold text-navy md:text-4xl">Projects</h3>
+          <p class="mx-auto mt-3 max-w-2xl text-body">
+            A concise, vertical list of selected projects. Each entry includes role, duration, a short description, subtle highlights, and a link to the case.
+          </p>
+        </div>
+        <div class="mx-auto max-w-4xl">
+          <div class="card-post space-y-6">
+            {
+              projects.map((project) => (
+                <ProjectCard
+                  title={project.title}
+                  role={project.role}
+                  duration={project.duration}
+                  excerpt={project.excerpt}
+                  tags={project.tags}
+                  href={project.slug === "core-platform-modernization" ? `/projects/${project.slug}` : "#"}
+                />
+              ))
+            }
+          </div>
+          <div class="mt-12 flex justify-center">
+            <button data-loading-button class="flex items-center gap-2 rounded-lg border border-coral px-4 py-2 text-sm font-medium text-coral transition-all duration-300">
+              <span data-button-text>Load More Projects</span>
+              <svg data-button-spinner class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
