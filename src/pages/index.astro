@@ -1,5 +1,5 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -9,9 +9,22 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Astro + Tailwind</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="min-h-screen bg-slate-950 text-slate-100">
+		<main class="mx-auto flex min-h-screen max-w-3xl items-center px-6 py-16">
+			<section class="space-y-6">
+				<p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
+					Tailwind is ready
+				</p>
+				<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+					Astro now has Tailwind CSS set up.
+				</h1>
+				<p class="max-w-2xl text-lg text-slate-300">
+					These utility classes are coming from Tailwind, so you can start styling
+					your project right away.
+				</p>
+			</section>
+		</main>
 	</body>
 </html>
