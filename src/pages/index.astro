@@ -1,81 +1,158 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import {
-  certifications,
-  companyLogos,
-  experiences,
-  skillGroups,
-} from "../data/site";
+import { companyLogos, experiences, skillGroups } from "../data/site";
+import Certification from "../components/Certification.astro";
 ---
 
 <BaseLayout title="Dwi Vendy - Homepage" activeNav="about">
   <main>
-    <section id="about" class="fade-in bg-gradient-to-br from-blob-a via-white to-blue-light pt-32 pb-20 md:pt-40 md:pb-32">
+    <section
+      id="about"
+      class="fade-in bg-linear-to-br from-blob-a via-white to-blue-light pt-32 pb-20 md:pt-40 md:pb-32"
+    >
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-16">
-          <div class="z-10 flex flex-1 flex-col items-start text-center md:text-left">
-            <span class="mb-6 inline-block rounded-full bg-blob-a px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-coral shadow-sm">
+        <div
+          class="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-16"
+        >
+          <div
+            class="z-10 flex flex-1 flex-col items-start text-center md:text-left"
+          >
+            <span
+              class="mb-6 inline-block rounded-full bg-blob-a px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-coral shadow-sm"
+            >
               Senior Software Engineer
             </span>
-            <h1 class="mb-6 text-5xl leading-[1.1] font-extrabold text-navy md:text-6xl lg:text-7xl">
+            <h1
+              class="mb-6 text-5xl leading-[1.1] font-extrabold text-navy md:text-6xl lg:text-7xl"
+            >
               Building <span class="text-coral">Smart</span> Digital Solutions
             </h1>
-            <p class="mb-10 max-w-xl text-lg leading-relaxed text-body md:text-xl">
-              Software engineer with 8+ years of experience building scalable systems and elegant solutions.
-              Passionate about clean architecture and developer experience.
+            <p
+              class="mb-10 max-w-xl text-lg leading-relaxed text-body md:text-xl"
+            >
+              Software engineer with 8+ years of experience building scalable
+              systems and elegant solutions. Passionate about clean architecture
+              and developer experience.
             </p>
-            <div class="flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
-              <a href="/projects" class="flex w-full items-center justify-center gap-2 rounded-full bg-coral px-8 py-4 font-bold text-white shadow-xl shadow-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-300 sm:w-auto">
+            <div
+              class="flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row"
+            >
+              <a
+                href="/projects"
+                class="flex w-full items-center justify-center gap-2 rounded-full bg-coral px-8 py-4 font-bold text-white shadow-xl shadow-blue-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-300 sm:w-auto"
+              >
                 View Projects
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                 </svg>
               </a>
-              <a href="#skills" class="flex w-full items-center justify-center rounded-full border-2 border-blue-light bg-white px-8 py-4 font-bold text-navy transition-all duration-300 hover:border-coral hover:text-coral sm:w-auto">
+              <a
+                href="#skills"
+                class="flex w-full items-center justify-center rounded-full border-2 border-blue-light bg-white px-8 py-4 font-bold text-navy transition-all duration-300 hover:border-coral hover:text-coral sm:w-auto"
+              >
                 My Skills
               </a>
             </div>
-            <div class="list-companys mt-12 flex items-center gap-8 opacity-60 grayscale transition-all duration-500 hover:grayscale-0">
-              {companyLogos.map((logo) => <span class="text-xl font-bold">{logo}</span>)}
+            <div
+              class="list-companys mt-12 flex items-center gap-8 opacity-60 grayscale transition-all duration-500 hover:grayscale-0"
+            >
+              {
+                companyLogos.map((logo) => (
+                  <span class="text-xl font-bold">{logo}</span>
+                ))
+              }
             </div>
           </div>
 
-          <div class="relative flex w-full flex-1 justify-center md:justify-end">
+          <div
+            class="relative flex w-full flex-1 justify-center md:justify-end"
+          >
             <div class="relative h-[320px] w-[320px] md:h-[450px] md:w-[450px]">
-              <div class="animate-float absolute top-0 right-0 h-full w-full scale-110 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-blob-a opacity-60 blur-xl"></div>
-              <div class="animate-float-delayed absolute top-10 right-10 h-full w-full scale-90 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] bg-blob-2 opacity-20 blur-xl"></div>
-              <div class="relative z-10 h-full w-full rotate-3 overflow-hidden rounded-[40px] border-8 border-white shadow-2xl shadow-blue-100/50 transition-transform duration-500 hover:rotate-0">
+              <div
+                class="animate-float absolute top-0 right-0 h-full w-full scale-110 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-blob-a opacity-60 blur-xl"
+              >
+              </div>
+              <div
+                class="animate-float-delayed absolute top-10 right-10 h-full w-full scale-90 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] bg-blob-2 opacity-20 blur-xl"
+              >
+              </div>
+              <div
+                class="relative z-10 h-full w-full rotate-3 overflow-hidden rounded-[40px] border-8 border-white shadow-2xl shadow-blue-100/50 transition-transform duration-500 hover:rotate-0"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop&crop=face"
                   alt="Dwi Vendy portrait"
                   class="h-full w-full object-cover"
                 />
               </div>
-              <div class="animate-float absolute top-20 -left-8 z-20 flex max-w-[200px] items-center gap-3 rounded-2xl bg-white p-4 shadow-xl shadow-slate-200/50">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blob-a text-coral">
-                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4m-4-4l-4 4"></path>
+              <div
+                class="animate-float absolute top-20 -left-8 z-20 flex max-w-[200px] items-center gap-3 rounded-2xl bg-white p-4 shadow-xl shadow-slate-200/50"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-blob-a text-coral"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 20l4-16m4 4l4 4m-4-4l-4 4"></path>
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs font-semibold uppercase text-gray-400">Experience</p>
+                  <p class="text-xs font-semibold uppercase text-gray-400">
+                    Experience
+                  </p>
                   <p class="text-sm font-bold text-navy">8+ Years</p>
                 </div>
               </div>
-              <div class="animate-float-delayed absolute right-[-1rem] bottom-20 z-20 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl shadow-slate-200/50">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-light text-coral">
-                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l-3 3m0 0l3 3m-3-3h12a3 3 0 000-6H5a3 3 0 000 6h12"></path>
+              <div
+                class="animate-float-delayed absolute right-[-1rem] bottom-20 z-20 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl shadow-slate-200/50"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-light text-coral"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 9l-3 3m0 0l3 3m-3-3h12a3 3 0 000-6H5a3 3 0 000 6h12"
+                    ></path>
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs font-semibold uppercase text-gray-400">Code Written</p>
+                  <p class="text-xs font-semibold uppercase text-gray-400">
+                    Code Written
+                  </p>
                   <p class="text-sm font-bold text-navy">2.5M+ Lines</p>
                 </div>
               </div>
-              <div class="animate-float absolute bottom-[-1.5rem] left-10 z-20 rounded-xl bg-navy px-5 py-3 text-white shadow-xl shadow-navy/30">
+              <div
+                class="animate-float absolute bottom-[-1.5rem] left-10 z-20 rounded-xl bg-navy px-5 py-3 text-white shadow-xl shadow-navy/30"
+              >
                 <div class="flex items-center gap-2">
-                  <div class="h-2 w-2 animate-pulse rounded-full bg-coral"></div>
+                  <div class="h-2 w-2 animate-pulse rounded-full bg-coral">
+                  </div>
                   <span class="text-sm font-bold">Open to work</span>
                 </div>
               </div>
@@ -88,23 +165,44 @@ import {
     <section id="skills" class="fade-in bg-white px-4 py-20 sm:px-6 md:py-28">
       <div class="mx-auto max-w-6xl">
         <div class="mb-16 text-center">
-          <span class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral">Tech Stack</span>
-          <h3 class="text-3xl font-extrabold text-navy md:text-4xl">Skills & Technologies</h3>
+          <span
+            class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral"
+            >Tech Stack</span
+          >
+          <h3 class="text-3xl font-extrabold text-navy md:text-4xl">
+            Skills & Technologies
+          </h3>
         </div>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           {
             skillGroups.map((group) => (
               <div class="group rounded-3xl border border-slate-100 bg-white p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(47,128,237,0.15)]">
                 <div class="mb-6 flex items-center gap-4">
-                  <div class={`flex h-12 w-12 items-center justify-center rounded-2xl ${group.accent}`}>
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4m-4-4l-4 4"></path>
+                  <div
+                    class={`flex h-12 w-12 items-center justify-center rounded-2xl ${group.accent}`}
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4m-4-4l-4 4"
+                      />
                     </svg>
                   </div>
                   <h4 class="text-xl font-bold text-navy">{group.title}</h4>
                 </div>
                 <div class="flex flex-wrap gap-3">
-                  {group.items.map((item) => <span class="inline-flex cursor-default items-center rounded-xl border border-transparent bg-surface px-4 py-2 text-sm font-semibold text-body transition-colors group-hover:border-coral/20 group-hover:bg-blob-a group-hover:text-coral">{item}</span>)}
+                  {group.items.map((item) => (
+                    <span class="inline-flex cursor-default items-center rounded-xl border border-transparent bg-surface px-4 py-2 text-sm font-semibold text-body transition-colors group-hover:border-coral/20 group-hover:bg-blob-a group-hover:text-coral">
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))
@@ -116,28 +214,42 @@ import {
     <section id="experience" class="fade-in px-4 py-20 sm:px-6 md:py-28">
       <div class="mx-auto max-w-6xl">
         <div class="mb-16 text-center">
-          <span class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral">Career Path</span>
-          <h3 class="text-3xl font-extrabold text-navy md:text-4xl">Work Experience</h3>
+          <span
+            class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral"
+            >Career Path</span
+          >
+          <h3 class="text-3xl font-extrabold text-navy md:text-4xl">
+            Work Experience
+          </h3>
         </div>
         <div class="relative mx-auto max-w-4xl">
-          <div class="absolute top-0 bottom-0 left-8 hidden w-1 rounded-full bg-blob-a md:block"></div>
+          <div
+            class="absolute top-0 bottom-0 left-8 hidden w-1 rounded-full bg-blob-a md:block"
+          >
+          </div>
           <div class="space-y-12">
             {
               experiences.map((experience) => (
                 <div class="group relative md:pl-24">
-                  <div class="absolute top-8 left-[26px] z-10 hidden h-5 w-5 rounded-full border-4 border-blob-a bg-coral shadow-lg transition-transform duration-300 group-hover:scale-125 md:block"></div>
+                  <div class="absolute top-8 left-[26px] z-10 hidden h-5 w-5 rounded-full border-4 border-blob-a bg-coral shadow-lg transition-transform duration-300 group-hover:scale-125 md:block" />
                   <div class="relative overflow-hidden rounded-3xl border border-blue-100/50 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-bl-[100px] bg-blob-a opacity-50 transition-transform duration-500 group-hover:scale-110"></div>
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-bl-[100px] bg-blob-a opacity-50 transition-transform duration-500 group-hover:scale-110" />
                     <div class="relative z-10 mb-4 flex flex-col justify-between md:flex-row md:items-center">
                       <div class="mb-2 flex items-center gap-3 md:mb-0">
-                        <h4 class="text-xl font-bold text-navy">{experience.title}</h4>
+                        <h4 class="text-xl font-bold text-navy">
+                          {experience.title}
+                        </h4>
                       </div>
                       <span class="inline-block rounded-full border border-blob-a bg-blob-a px-4 py-1 text-sm font-bold text-coral">
                         {experience.period}
                       </span>
                     </div>
-                    <div class="relative z-10 mb-4 text-lg font-semibold text-coral">{experience.company}</div>
-                    <p class="relative z-10 leading-relaxed text-body">{experience.description}</p>
+                    <div class="relative z-10 mb-4 text-lg font-semibold text-coral">
+                      {experience.company}
+                    </div>
+                    <p class="relative z-10 leading-relaxed text-body">
+                      {experience.description}
+                    </p>
                   </div>
                 </div>
               ))
@@ -147,39 +259,6 @@ import {
       </div>
     </section>
 
-    <section class="fade-in bg-white px-4 py-20 sm:px-6 md:py-28">
-      <div class="mx-auto max-w-6xl">
-        <div class="relative overflow-hidden rounded-[40px] bg-navy p-8 text-white shadow-2xl shadow-navy/20 md:p-16">
-          <div class="absolute top-0 right-0 -mt-16 -mr-16 h-64 w-64 rounded-full bg-coral opacity-20 blur-[80px]"></div>
-          <div class="absolute bottom-0 left-0 -mb-16 -ml-16 h-64 w-64 rounded-full bg-coral opacity-20 blur-[80px]"></div>
-          <div class="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-            <div class="max-w-md">
-              <span class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral">Credentials</span>
-              <h3 class="mb-6 text-3xl font-extrabold text-white md:text-4xl">Certifications & Awards</h3>
-              <p class="leading-relaxed text-gray-300">
-                Continuous learning is part of my DNA. Here are some of the professional certifications I&apos;ve earned to validate my expertise.
-              </p>
-            </div>
-            <div class="w-full space-y-4 md:w-1/2">
-              {
-                certifications.map((certification) => (
-                  <div class="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-md transition-colors duration-300 hover:bg-white/20">
-                    <div class="flex items-start gap-4">
-                      <svg class="mt-1 h-6 w-6 flex-shrink-0 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                      <div>
-                        <h4 class="mb-1 text-lg leading-tight font-bold text-white">{certification.title}</h4>
-                        <p class="text-sm text-gray-300">{certification.issuer} • {certification.year}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Certification />
   </main>
 </BaseLayout>

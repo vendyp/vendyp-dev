@@ -68,24 +68,6 @@ export const experiences = [
   },
 ] as const;
 
-export const certifications = [
-  {
-    title: "AWS Certified Solutions Architect - Professional",
-    issuer: "Amazon Web Services",
-    year: "2023",
-  },
-  {
-    title: "Google Cloud Professional Cloud Architect",
-    issuer: "Google",
-    year: "2022",
-  },
-  {
-    title: "Certified Kubernetes Administrator (CKA)",
-    issuer: "The Linux Foundation",
-    year: "2022",
-  },
-] as const;
-
 export const posts = [
   {
     slug: "building-scalable-microservices-with-go",

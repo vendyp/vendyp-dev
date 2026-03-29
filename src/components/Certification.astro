@@ -1,0 +1,77 @@
+---
+import { certifications } from "../data/certifications";
+---
+
+<section class="fade-in bg-white px-4 py-20 sm:px-6 md:py-28">
+    <div class="mx-auto max-w-6xl">
+        <div
+            class="relative overflow-hidden rounded-[40px] bg-navy p-8 text-white shadow-2xl shadow-navy/20 md:p-16"
+        >
+            <div
+                class="absolute top-0 right-0 -mt-16 -mr-16 h-64 w-64 rounded-full bg-coral opacity-20 blur-[80px]"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -mb-16 -ml-16 h-64 w-64 rounded-full bg-coral opacity-20 blur-[80px]"
+            >
+            </div>
+            <div
+                class="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center"
+            >
+                <div class="max-w-md">
+                    <span
+                        class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral"
+                        >Credentials</span
+                    >
+                    <h3
+                        class="mb-6 text-3xl font-extrabold text-white md:text-4xl"
+                    >
+                        Certifications & Awards
+                    </h3>
+                    <p class="leading-relaxed text-gray-300">
+                        Continuous learning is part of my DNA. Here are some of
+                        the professional certifications I&apos;ve earned to
+                        validate my expertise.
+                    </p>
+                </div>
+                <div class="w-full space-y-4 md:w-1/2">
+                    {
+                        certifications.map((certification) => (
+                            <div class="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-md transition-colors duration-300 hover:bg-white/20">
+                                <div class="flex items-start gap-4">
+                                    <svg
+                                        class="mt-1 h-6 w-6 flex-shrink-0 text-coral"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        />
+                                    </svg>
+                                    <div>
+                                        <a
+                                            class="mb-1 text-lg leading-tight font-bold text-white"
+                                            href={certification.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {certification.title}
+                                        </a>
+                                        <p class="text-sm text-gray-300">
+                                            {certification.issuer} •{" "}
+                                            {certification.year}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
