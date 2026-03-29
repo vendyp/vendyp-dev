@@ -1,10 +1,5 @@
-export const siteMeta = {
-  title: "Dwi Vendy",
-  description:
-    "Software engineer portfolio focused on scalable systems, product-minded engineering, and polished digital experiences.",
-  email: "hello@example.com",
-  location: "Surabaya, Indonesia",
-};
+import { siteMeta } from "./metadata";
+
 
 export const navLinks = [
   { href: "/", label: "About", key: "about" },
@@ -233,3 +228,5 @@ export const featuredProject = {
     },
   ],
 } as const;
+
+export { siteMeta };

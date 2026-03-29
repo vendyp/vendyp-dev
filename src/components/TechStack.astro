@@ -1,0 +1,54 @@
+---
+import { skillGroups } from "../data/site";
+---
+
+<section id="skills" class="fade-in bg-white px-4 py-20 sm:px-6 md:py-28">
+    <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+            <span
+                class="mb-2 block text-sm font-bold uppercase tracking-wider text-coral"
+                >Tech Stack</span
+            >
+            <h3 class="text-3xl font-extrabold text-navy md:text-4xl">
+                Skills & Technologies
+            </h3>
+        </div>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {
+                skillGroups.map((group) => (
+                    <div class="group rounded-3xl border border-slate-100 bg-white p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(47,128,237,0.15)]">
+                        <div class="mb-6 flex items-center gap-4">
+                            <div
+                                class={`flex h-12 w-12 items-center justify-center rounded-2xl ${group.accent}`}
+                            >
+                                <svg
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4m-4-4l-4 4"
+                                    />
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-navy">
+                                {group.title}
+                            </h4>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            {group.items.map((item) => (
+                                <span class="inline-flex cursor-default items-center rounded-xl border border-transparent bg-surface px-4 py-2 text-sm font-semibold text-body transition-colors group-hover:border-coral/20 group-hover:bg-blob-a group-hover:text-coral">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
