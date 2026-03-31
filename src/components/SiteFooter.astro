@@ -1,6 +1,6 @@
 ---
 import { siteMeta } from "../data/metadata";
-import { socialLinks } from "../data/site";
+import { socialLinks } from "../data/sociallinks";
 ---
 
 <footer class="border-t border-white/10 bg-navy pt-20 pb-10 text-white">
@@ -29,9 +29,7 @@ import { socialLinks } from "../data/site";
               class="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:scale-110 hover:bg-coral"
               aria-label={link.label}
             >
-              <span class="text-sm font-semibold">
-                {link.label.slice(0, 2)}
-              </span>
+              <span set:html={link.svg} />
             </a>
           ))
         }

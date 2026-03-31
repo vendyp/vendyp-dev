@@ -1,67 +1,12 @@
 import { siteMeta } from "./metadata";
 
-
 export const navLinks = [
   { href: "/", label: "About", key: "about" },
   { href: "/posts", label: "Post", key: "post" },
   { href: "/projects", label: "Project", key: "project" },
 ] as const;
 
-export const socialLinks = [
-  { label: "GitHub", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Twitter", href: "#" },
-  { label: "Email", href: `mailto:${siteMeta.email}` },
-];
-
 export const companyLogos = ["Google", "Amazon", "Meta", "Stripe"];
-
-export const skillGroups = [
-  {
-    title: "Languages",
-    accent: "bg-blue-100 text-blue-600",
-    items: ["TypeScript", "Python", "Go", "Rust", "SQL"],
-  },
-  {
-    title: "Frameworks & Libraries",
-    accent: "bg-blue-100 text-blue-600",
-    items: ["React", "Next.js", "Node.js", "FastAPI", "Tailwind CSS"],
-  },
-  {
-    title: "Cloud & Infrastructure",
-    accent: "bg-purple-100 text-purple-600",
-    items: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
-  },
-  {
-    title: "Data & Tools",
-    accent: "bg-green-100 text-green-600",
-    items: ["PostgreSQL", "Redis", "GraphQL", "Git", "CI/CD"],
-  },
-] as const;
-
-export const experiences = [
-  {
-    title: "Senior Software Engineer",
-    company: "TechFlow Systems",
-    period: "2021 - Present",
-    description:
-      "Leading the core platform team in re-architecting legacy monoliths into scalable microservices. Improved system reliability to 99.9% and reduced deployment time by 60% through automated CI/CD pipelines.",
-  },
-  {
-    title: "Software Engineer",
-    company: "DataSphere Inc.",
-    period: "2018 - 2021",
-    description:
-      "Developed high-performance data ingestion pipelines processing terabytes of data daily. Partnered with data scientists to optimize machine learning infrastructure on Kubernetes.",
-  },
-  {
-    title: "Full Stack Developer",
-    company: "Creative Solutions Agency",
-    period: "2016 - 2018",
-    description:
-      "Built responsive web applications for diverse clients using React and Node.js while mentoring junior developers and raising the bar on testing and code quality.",
-  },
-] as const;
 
 export const posts = [
   {
