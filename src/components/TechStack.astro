@@ -1,5 +1,5 @@
 ---
-import { skillGroups } from "../data/site";
+import { skillGroups } from "../data/skillgroups";
 ---
 
 <section id="skills" class="fade-in bg-white px-4 py-20 sm:px-6 md:py-28">
@@ -41,7 +41,7 @@ import { skillGroups } from "../data/site";
                         </div>
                         <div class="flex flex-wrap gap-3">
                             {group.items.map((item) => (
-                                <span class="inline-flex cursor-default items-center rounded-xl border border-transparent bg-surface px-4 py-2 text-sm font-semibold text-body transition-colors group-hover:border-coral/20 group-hover:bg-blob-a group-hover:text-coral">
+                                <span class="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold bg-surface text-body border border-transparent transition-colors cursor-default">
                                     {item}
                                 </span>
                             ))}
