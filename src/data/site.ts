@@ -6,8 +6,6 @@ export const navLinks = [
   { href: "/projects", label: "Project", key: "project" },
 ] as const;
 
-export const companyLogos = ["Google", "Amazon", "Meta", "Stripe"];
-
 export const posts = [
   {
     slug: "building-scalable-microservices-with-go",

@@ -5,6 +5,7 @@
   --font-sans: "Poppins", sans-serif;
   --color-navy: #1b1b4e;
   --color-coral: #2f80ed;
+  --color-coral-muted: rgb(47 128 237 / 60%);
   --color-blue-light: #e8f0fe;
   --color-blob-a: #e6f6ff;
   --color-blob-2: #dbeafe;
@@ -15,6 +16,7 @@
 :root {
   --navy: #1b1b4e;
   --coral: #2f80ed;
+  --coral-muted: rgba(47, 128, 237, 0.6);
   --blue-light: #e8f0fe;
   --text-body: #4a4a68;
   --blob-a-0: rgba(230, 246, 255, 0.9);
@@ -159,6 +161,16 @@ section {
 
 a {
   transition: all 0.26s ease;
+}
+
+.text-md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 #nav-menu {
