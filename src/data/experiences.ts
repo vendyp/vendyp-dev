@@ -16,7 +16,7 @@ export const experiences = [
   },
 
   {
-    url: "https://www.linkedin.com/company/globalride/",
+    url: "https://www.globalride.io/en/",
     title: "Software Engineer",
     company: "Global Ride, Inc",
     workType: "Part-time (Remote)",
@@ -33,7 +33,7 @@ export const experiences = [
   },
 
   {
-    url: "https://www.linkedin.com/company/pt.-neo-fusion-indonesia/",
+    url: "https://neo-fusion.com/",
     title: "Software Engineer",
     company: "PT. Neo Fusion Indonesia",
     workType: "(Outsourced via Radyalabs) Full-time (Remote)",
@@ -50,7 +50,7 @@ export const experiences = [
   },
 
   {
-    url: "https://www.linkedin.com/company/anteraja/",
+    url: "https://anteraja.id/",
     title: "Back-End Developer",
     company: "Anteraja",
     workType: "(Outsourced via Radyalabs) Full-time (Remote)",
