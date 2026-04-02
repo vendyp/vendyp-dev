@@ -3,11 +3,10 @@ interface Props {
   title: string;
   category: string;
   date: string;
-  excerpt: string;
   href?: string;
 }
 
-const { title, category, date, excerpt, href = "#" } = Astro.props;
+const { title, category, date, href = "#" } = Astro.props;
 ---
 
 <article class="group flex flex-col justify-between rounded-2xl border border-gray-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(47,128,237,0.10)] sm:flex-row sm:items-center md:p-8">
@@ -20,7 +19,6 @@ const { title, category, date, excerpt, href = "#" } = Astro.props;
       <span class="mx-1">•</span>
       {date}
     </div>
-    <p class="text-sm leading-relaxed text-gray-600">{excerpt}</p>
   </div>
   <div class="mt-4 sm:mt-0">
     <a href={href} class="group/link relative flex w-full items-center justify-between text-sm font-medium text-coral transition-all duration-200">

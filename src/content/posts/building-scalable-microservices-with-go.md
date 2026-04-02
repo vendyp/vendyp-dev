@@ -1,6 +1,5 @@
 ---
 title: Building Scalable Microservices with Go
-excerpt: An in-depth guide to designing and implementing microservices architecture using Go, covering service discovery, API gateways, and deployment strategies.
 category: Engineering
 date: 2024-02-15
 description: Thoughts, insights, and technical writings

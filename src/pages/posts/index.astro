@@ -16,7 +16,6 @@ const posts = (await getCollection("posts"))
       day: "numeric",
       year: "numeric",
     }),
-    excerpt: post.data.excerpt,
   }));
 ---
 
@@ -85,7 +84,6 @@ const posts = (await getCollection("posts"))
                       title={post.title}
                       category={post.category}
                       date={post.date}
-                      excerpt={post.excerpt}
                       href={`/posts/${post.slug}`}
                     />
                   ))
