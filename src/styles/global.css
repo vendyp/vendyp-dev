@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sans: "Poppins", sans-serif;
@@ -101,12 +102,12 @@ body {
 }
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  :not(.post-content) h1,
+  :not(.post-content) h2,
+  :not(.post-content) h3,
+  :not(.post-content) h4,
+  :not(.post-content) h5,
+  :not(.post-content) h6 {
     color: var(--navy);
   }
 }

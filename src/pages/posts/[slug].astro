@@ -1,0 +1,41 @@
+---
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post: CollectionEntry<"posts">) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect("/posts");
+}
+
+const post = await getEntry("posts", slug);
+
+if (!post) {
+  throw new Error(`Post not found: ${slug}`);
+}
+
+const { Content } = await post.render();
+const formattedDate = post.data.date.toLocaleDateString("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+---
+
+<PostLayout
+  pageTitle={`Dwi Vendy - ${post.data.title}`}
+  postTitle={post.data.title}
+  excerpt={post.data.excerpt}
+  category={post.data.category}
+  formattedDate={formattedDate}
+>
+  <Content />
+</PostLayout>

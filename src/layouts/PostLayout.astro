@@ -1,0 +1,55 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+    pageTitle: string;
+    postTitle: string;
+    excerpt?: string;
+    category: string;
+    formattedDate: string;
+}
+
+const { pageTitle, postTitle, excerpt, category, formattedDate } = Astro.props;
+---
+
+<BaseLayout title={pageTitle} activeNav="post">
+    <main class="post-layout-shell">
+        <section class="fade-in px-4 pt-32 pb-20 sm:px-6">
+            <article
+                class="post-card mx-auto max-w-3xl rounded-4xl border border-white/60 bg-white/70 p-8 shadow-[0_20px_60px_-20px_rgba(27,27,78,0.15)] backdrop-blur-sm md:p-12"
+            >
+                <header class="mb-8">
+                    <div
+                        class="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500"
+                    >
+                        <span
+                            class="rounded-full bg-blue-light px-3 py-1 font-medium text-coral"
+                        >
+                            {category}
+                        </span>
+                        <span aria-hidden="true">•</span>
+                        <time>{formattedDate}</time>
+                    </div>
+                    <h1
+                        class="text-3xl font-extrabold tracking-tight text-navy md:text-4xl"
+                    >
+                        {postTitle}
+                    </h1>
+                    {
+                        excerpt && (
+                            <p class="mt-3 text-lg text-gray-500">{excerpt}</p>
+                        )
+                    }
+                </header>
+
+                <hr class="mb-8 border-t border-gray-200" />
+
+                <div
+                    class="post-content prose prose-lg max-w-none text-body prose-headings:text-navy prose-a:text-coral"
+                >
+                    <slot />
+                </div>
+            </article>
+        </section>
+    </main>
+</BaseLayout>
