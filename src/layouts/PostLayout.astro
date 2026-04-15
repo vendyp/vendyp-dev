@@ -6,9 +6,11 @@ interface Props {
     postTitle: string;
     category: string;
     formattedDate: string;
+    description: string;
 }
 
-const { pageTitle, postTitle, category, formattedDate } = Astro.props;
+const { pageTitle, postTitle, category, formattedDate, description } =
+    Astro.props;
 ---
 
 <BaseLayout title={pageTitle} activeNav="post">
@@ -34,6 +36,9 @@ const { pageTitle, postTitle, category, formattedDate } = Astro.props;
                         <span aria-hidden="true">•</span>
                         <time>{formattedDate}</time>
                     </div>
+                    <p class="text-sm mt-2 text-gray-500 italic">
+                        {description}
+                    </p>
                 </header>
 
                 <hr class="mb-8 border-t border-gray-200" />

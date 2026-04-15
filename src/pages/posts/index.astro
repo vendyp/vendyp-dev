@@ -4,8 +4,9 @@ import PostCard from "../../components/PostCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const posts = (await getCollection("posts"))
-  .sort((a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
-    b.data.date.getTime() - a.data.date.getTime(),
+  .sort(
+    (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
+      b.data.date.getTime() - a.data.date.getTime(),
   )
   .map((post: CollectionEntry<"posts">) => ({
     slug: post.slug,
@@ -16,6 +17,7 @@ const posts = (await getCollection("posts"))
       day: "numeric",
       year: "numeric",
     }),
+    description: post.data.description,
   }));
 ---
 
@@ -64,9 +66,9 @@ const posts = (await getCollection("posts"))
               class="rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-transparent focus:ring-2 focus:ring-coral focus:outline-none"
             >
               <option value="">All Categories</option>
-              <option value="engineering">Engineering</option>
+              <!-- <option value="engineering">Engineering</option>
               <option value="design">Design</option>
-              <option value="product">Product</option>
+              <option value="product">Product</option> -->
             </select>
           </div>
         </div>
@@ -78,16 +80,17 @@ const posts = (await getCollection("posts"))
           posts.length > 0 ? (
             <>
               <div class="card-post flex flex-col gap-5">
-                {
-                  posts.map((post: (typeof posts)[number]) => (
-                    <PostCard
-                      title={post.title}
-                      category={post.category}
-                      date={post.date}
-                      href={`/posts/${post.slug}`}
-                    />
-                  ))
-                }
+                {posts.map((post: (typeof posts)[number]) => (
+                  <PostCard
+                    title={post.title}
+                    category={post.category}
+                    date={post.date}
+                    description={
+                      post.description || "No description available."
+                    }
+                    href={`/posts/${post.slug}`}
+                  />
+                ))}
               </div>
               <div class="mt-12 flex justify-center">
                 <button
@@ -108,12 +111,13 @@ const posts = (await getCollection("posts"))
                       cy="12"
                       r="10"
                       stroke="currentColor"
-                      stroke-width="4"></circle>
+                      stroke-width="4"
+                    />
                     <path
                       class="opacity-75"
                       fill="currentColor"
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    ></path>
+                    />
                   </svg>
                 </button>
               </div>
@@ -122,7 +126,8 @@ const posts = (await getCollection("posts"))
             <div class="card-post rounded-xl border border-coral/30 bg-white/60 px-6 py-12 text-center shadow-sm">
               <h2 class="text-2xl font-bold text-navy">No posts yet</h2>
               <p class="mx-auto mt-3 max-w-xl text-body">
-                New articles are being drafted. Please check back soon for fresh technical writings and insights.
+                New articles are being drafted. Please check back soon for fresh
+                technical writings and insights.
               </p>
               <a
                 href="/"

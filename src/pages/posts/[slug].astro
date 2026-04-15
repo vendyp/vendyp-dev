@@ -35,6 +35,7 @@ const formattedDate = post.data.date.toLocaleDateString("en-US", {
   postTitle={post.data.title}
   category={post.data.category}
   formattedDate={formattedDate}
+  description={post.data.description || "No description available."}
 >
   <Content />
 </PostLayout>
