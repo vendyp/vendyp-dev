@@ -2,6 +2,7 @@
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import { siteMeta } from "../data/metadata";
+import dvpIcon from "../assets/dvp-icon.png";
 import "../styles/global.css";
 
 interface Props {
@@ -25,8 +26,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href={dvpIcon.src} />
     <title>{title}</title>
     <slot name="head" />
   </head>
