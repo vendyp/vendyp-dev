@@ -9,15 +9,17 @@ export type Project = {
 }
 
 export const projects: Project[] = [
-    // {
-    //     slug: "core-platform-modernization",
-    //     title: "Core Platform Modernization",
-    //     role: "Senior Software Engineer",
-    //     duration: "2023 - 2024",
-    //     excerpt:
-    //         "Led the migration of a legacy monolith to scalable microservices, improving system reliability and deployment speed. Architected CI/CD pipelines and mentored the engineering team.",
-    //     tags: ["Microservices", "CI/CD", "Cloud Platform"],
-    // }
+    {
+        slug: "core-platform-modernization",
+        title: "Core Platform Modernization",
+        role: "Senior Software Engineer",
+        duration: "2023 - 2024",
+        excerpt:
+            "Led the migration of a legacy monolith to scalable microservices, improving system reliability and deployment speed. Architected CI/CD pipelines and mentored the engineering team.",
+        description:
+            "Core Platform Modernization involved migrating a legacy monolithic application to a modern microservices architecture. This project aimed to improve system reliability, deployment speed, and overall engineering efficiency.",
+        tags: ["Microservices", "CI/CD", "Cloud Platform"],
+    }
 ] as const;
 
 export const featuredProject = {
